@@ -39,18 +39,18 @@ const bitsToString = (bits: number[]): string => {
 
 export default function App() {
   const [originalText, setOriginalText] = useState('Hola mundo!');
-  const [noiseBit, setNoiseBit] = useState(-1); // -1 significa sin ruido
+  const [noiseBit, setNoiseBit] = useState(-1);
   const [showResult, setShowResult] = useState(false);
 
   // --- LÓGICA DE CODIFICACIÓN ---
   const originalBits = useMemo(() => stringToBits(originalText), [originalText]);
 
-  // Agrupar en bloques de 4 bits y codificar a 7 bits (memoizado)
+  // Agrupar en bloques de 4 bits y codificar a 7 bits
   const encodedStream = useMemo(() => {
     const stream: number[] = [];
     for (let i = 0; i < originalBits.length; i += 4) {
       let block = originalBits.slice(i, i + 4);
-      while (block.length < 4) block.push(0); // Padding si no es múltiplo de 4
+      while (block.length < 4) block.push(0);
 
       // Multiplicación matricial bloque * G mod 2
       const encodedBlock = Array(7).fill(0);
