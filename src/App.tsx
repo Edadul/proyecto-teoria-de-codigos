@@ -133,7 +133,7 @@ export default function App() {
     <div className="app-container">
       <header className="app-header">
         <h1 className="app-title">📡 SecureCom - Hamming [7,4,3]</h1>
-        <p className="app-subtitle">Proyecto Práctico de Teoría de Códigos • Esteban Arnedo y Robert No recuerdo</p>
+        <p className="app-subtitle">Proyecto Práctico de Teoría de Códigos • Esteban Arnedo y Robert Lindado</p>
       </header>
 
       <div className="grid-container">
